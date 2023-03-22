@@ -46,21 +46,20 @@ allArray(teamArray);
 function allArray(array) {
 
     // selezioniamo ul
-    let list = document.querySelector("ul");
+    let cards = document.querySelector(".row");
 
     // controlliamo tutto l'array
     for (let i = 0; i < array.length; i++) {
-        // per ogni elemento dell'array creiamo un li memebro i
-        list.innerHTML += `<li>membro ${i+1}</li>`
 
-        // per ogni oggetto stampiamo tutte le key con il relativo contenuto
-        for (const key in array[i]) {
-            console.log(key, array[i][key]);
-            list.innerHTML += `<li>${key}: ${array[i][key]}</li>`
-        }
+        // aggiungiamo la card per ogni memnbro, con realtivo nome occupazione e foto
+        cards.innerHTML += `<div class="card col p-0 rounded-0" style="width: 18rem;">
+                                <img src="img/${array[i].foto}" class="" alt="${array[i].nome}">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">${array[i].nome}</h5>
+                                    <p class="card-text text-center">${array[i].lavoro}</p>
+                             </div>
+                            </div>`
 
-        // aggiungiamo spazio per ogni oggetto stampato
-        list.innerHTML +=`<br>`
     }
 
 };
