@@ -30,3 +30,23 @@ let teamArray =[
         foto: "barbara-ramos-graphic-designer.jpg"
     }
 ];
+
+
+
+allArray(teamArray);
+
+
+
+function allArray(array){
+    for(let i = 0; i < array.length; i++){
+        for (const key in array[i]) {
+            console.log(key, array[i][key]);
+            
+            }
+        
+     
+     }
+
+     
+
+};
