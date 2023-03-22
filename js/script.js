@@ -1,4 +1,5 @@
-let teamArray =[
+// Array con tutti i memebri
+let teamArray = [
     {
         nome: "Wayne Barnett",
         lavoro: "Founder & CEO",
@@ -32,21 +33,34 @@ let teamArray =[
 ];
 
 
-
+// usiamo l'array nella funzione
 allArray(teamArray);
 
 
 
-function allArray(array){
-    for(let i = 0; i < array.length; i++){
+/**
+ * Description
+ * @param {array} array
+ * @returns {any}
+ */
+function allArray(array) {
+
+    // selezioniamo ul
+    let list = document.querySelector("ul");
+
+    // controlliamo tutto l'array
+    for (let i = 0; i < array.length; i++) {
+        // per ogni elemento dell'array creiamo un li memebro i
+        list.innerHTML += `<li>membro ${i+1}</li>`
+
+        // per ogni oggetto stampiamo tutte le key con il relativo contenuto
         for (const key in array[i]) {
             console.log(key, array[i][key]);
-            
-            }
-        
-     
-     }
+            list.innerHTML += `<li>${key}: ${array[i][key]}</li>`
+        }
 
-     
+        // aggiungiamo spazio per ogni oggetto stampato
+        list.innerHTML +=`<br>`
+    }
 
 };
